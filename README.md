@@ -1,5 +1,6 @@
 # PHP_Project
 recenzje, komentowanie i odpowiadanie
+
 cos jak IG
 Pomysł:
 - recenzje wybranego filmu/gry/serialiu/anime/książki (innymi słowy dodanie jakiegoś postu)
