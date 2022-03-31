@@ -1,0 +1,11 @@
+.reset
+{
+    background-color: #F00;
+    border: solid 1px #F00;
+}
+
+.reset:hover
+{
+    background-color: #D00;
+    border: solid 1px #D00;
+}

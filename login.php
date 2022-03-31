@@ -3,4 +3,3 @@
         {
           echo "Twoj login to: " .$_POST['login']."</br>". "Twoje haslo to: ".$_POST['password']."</br>". "Twoj email to: ".$_POST['email'];
         }
-?>
