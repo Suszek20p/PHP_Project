@@ -1,5 +1,10 @@
 <?php
-        if (!empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['email']))
-        {
-          echo "Twoj login to: " .$_POST['login']."</br>". "Twoje haslo to: ".$_POST['password']."</br>". "Twoj email to: ".$_POST['email'];
-        }
+
+if (isset($_POST['login']) && isset($_POST['password']))
+{
+  $login = $_POST['login'];
+  $password = $_POST['password'];
+
+  $dane = fopen('dane.txt', 'a');
+  fwrite($dane, $login." ".$password . "\n");
+}
