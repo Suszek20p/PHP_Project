@@ -17,7 +17,7 @@
     <?php
     session_start();
     
-        echo "Logowanie przebiegło pomyślnie użytkowniku ". $_SESSION["login"]."<br>";
+        echo $_SESSION["login"]."<br>"."<br>";
 
         $posty = $_POST["post"];
         echo $posty;
