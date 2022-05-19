@@ -8,23 +8,38 @@
 </html>
 
 <?php
-    $password = $_POST['password'];
-    $password_02 = $_POST['password_02'];
 
-    if ($password != $password_02)
+$login = trim($_POST["login"]);
+$password = trim($_POST["password"]);
+$password_02 = trim($_POST["password_02"]);
+$f = fopen("dane.txt", 'r+');
+$x = false;
+
+if ($password != $password_02)
     {
         echo "Hasło musi być takie samo w obu polach";
     }
     else
     {
-        if (isset($_POST['login']) && isset($_POST['password']))
+
+        while(!feof($f))
         {
-            $login = $_POST['login'];
-            $password = $_POST['password'];
-
-            $dane = fopen('dane.txt', 'a');
-            fwrite($dane, $login." ".$password . "\n");
-
-            echo "Witaj użytkowniku: ".$login.". Mamy nadzieję że ci się tu spodoba!"."</br>"."<a href='login.html'> A teraz się zaloguj </a>";
+            if( explode(" ", fgets($f) )[0] == $login)
+            {      
+                $x = true;       
+            }
+        }
+        if($x)
+        {
+            echo "Podana nazwa użytkownika jest już zajęta!";
+            fclose($f);
+            header("refresh:3; url=register.php");  
+        }
+        else
+        {
+            fwrite($f, "$login $password \n");       
+            fclose($f);
+            header("Location: login.html");  
+            exit;
         }
     }

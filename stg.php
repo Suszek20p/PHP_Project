@@ -8,8 +8,20 @@
 </head>
 <body>
 
+<form method="post">
+  <textarea name="post"></textarea>
+  <input type="submit" value="Dodaj posta"/>
+</form>
+
+
     <?php
-        echo "Logowanie przebiegło pomyślnie";
+    session_start();
+    
+        echo "Logowanie przebiegło pomyślnie użytkowniku ". $_SESSION["login"]."<br>";
+
+        $posty = $_POST["post"];
+        echo $posty;
+        
     ?>
     
 </body>

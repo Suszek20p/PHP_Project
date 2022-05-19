@@ -3,14 +3,14 @@ ob_start();
 session_start();
 
 
-if( !isset($_POST["submit"]) )   
+if( !isset($_POST["submit"]) )   //validacja
 {      
     echo "Nie ładnie tak wchodzić bez logowania!";
     header("refresh:3; url=login.html");  
 }
 
 
-
+//sprawdzanie czy w pliku istnieje
 $login = trim($_POST["login"]);
 $password = trim($_POST["password"]);
 $prime;
@@ -36,10 +36,10 @@ while(!feof($f))
 if($x)
 {
     $_SESSION["login"] = $login;
-    $_SESSION["password"] = $password;       
+    $_SESSION["password"] = $password;       //nwm czy potrzebne wsm
     $_SESSION["prime"] = $prime;
     header("Location: stg.php");  
-
+    exit;
 }
 else
 {
