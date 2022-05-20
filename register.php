@@ -33,7 +33,7 @@ if ($password != $password_02)
         {
             echo "Podana nazwa użytkownika jest już zajęta!";
             fclose($f);
-            header("refresh:3; url=register.php");  
+            header("refresh:3; url=register.html");  
         }
         else
         {

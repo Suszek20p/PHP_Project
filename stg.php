@@ -9,19 +9,21 @@
 <body>
 
 <form method="post">
-  <textarea name="post"></textarea>
+  <input type="text" name="post">
   <input type="submit" value="Dodaj posta"/>
 </form>
 
 
     <?php
-    session_start();
-    
-        echo $_SESSION["login"]."<br>"."<br>";
+        session_start();
 
-        $posty = $_POST["post"];
-        echo $posty;
-        
+        $addPost = $_POST["post"];
+        $f = fopen("posty.txt", 'r+');
+        fwrite($f, "$addPost \n");
+        fclose($f);
+
+        echo $_SESSION["login"]."<br>"."<br>". $addPost;       
+
     ?>
     
 </body>
