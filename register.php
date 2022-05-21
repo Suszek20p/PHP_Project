@@ -9,6 +9,7 @@
 
 <?php
 
+
 $login = trim($_POST["login"]);
 $password = trim($_POST["password"]);
 $password_02 = trim($_POST["password_02"]);
@@ -33,7 +34,7 @@ if ($password != $password_02)
         {
             echo "Podana nazwa użytkownika jest już zajęta!";
             fclose($f);
-            header("refresh:3; url=register.html");  
+            header("refresh:3; url=register.php");  
         }
         else
         {

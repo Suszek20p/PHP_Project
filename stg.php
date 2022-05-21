@@ -9,7 +9,7 @@
 <body>
 
 <form method="post">
-  <input type="text" name="post">
+  <textarea name="post"></textarea>
   <input type="submit" value="Dodaj posta"/>
 </form>
 
@@ -22,8 +22,7 @@
         fwrite($f, "$addPost \n");
         fclose($f);
 
-        echo $_SESSION["login"]."<br>"."<br>". $addPost;       
-
+        echo $_SESSION["login"]."<br>"."<br>". $addPost;    
     ?>
     
 </body>
