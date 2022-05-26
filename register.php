@@ -19,6 +19,7 @@ $x = false;
 if ($password != $password_02)
     {
         echo "Hasło musi być takie samo w obu polach";
+        header("refresh:3; url=register.html"); 
     }
     else
     {
@@ -32,9 +33,9 @@ if ($password != $password_02)
         }
         if($x)
         {
-            echo "Podana nazwa użytkownika jest już zajęta!";
+            echo "Ktoś ma już taką nazwę, musisz wymyśleć inną";
             fclose($f);
-            header("refresh:3; url=register.php");  
+            header("refresh:3; url=register.html");  
         }
         else
         {
